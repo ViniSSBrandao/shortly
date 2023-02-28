@@ -11,6 +11,5 @@ const configDatabase ={
 
 if(process.env.MODE === 'prod') config.database.ssl = true;
 
-const db = new Pool(configDatabase);
+export const db = new Pool(configDatabase);
 
-export default db

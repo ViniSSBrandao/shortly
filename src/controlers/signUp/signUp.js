@@ -1,9 +1,10 @@
 import bcrypt from 'bcrypt'
+import { db } from '../../config/database/databaseConnection.js';
+
 
 export default async function(req, res){
     const { name, email, password } = req.body;
     try{
-        
         const hashedPassword = bcrypt.hashSync(password, 10);
         const user = await db.query("INSERT INTO customers (name, password, email) VALUES ($1, $2, $3)", [name, hashedPassword, email]) 
         
