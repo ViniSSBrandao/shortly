@@ -15,7 +15,6 @@ export default async function(req, res, next){
         if(!entrieData.rowCount){
             return res.sendStatus(401);
         }
-        return res.sendStatus(201)
         next()
     } catch (error) {
         return res.status(500).send(error.message)

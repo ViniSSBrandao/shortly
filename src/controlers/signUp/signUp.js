@@ -11,7 +11,7 @@ export default async function(req, res){
         return res.status(201).send("registered user");
     }
     catch(error){
-        return res.send(error.message).status(500)
+        return res.status(500).send(error.message)
     }
 
 }
