@@ -9,7 +9,6 @@ export default async function(req, res){
             `SELECT * FROM customers
             WHERE email=$1;`,
             [email]);
-
         if(!checkUser.rowCount){
             return res.sendStatus(401)
         }
@@ -18,10 +17,11 @@ export default async function(req, res){
             return res.sendStatus(401)
         }
         const token = uuidV4() 
+        console.log(checkUser.rows[0].id)
         const sessions = await db.query(
-            `INSERT INTO sessi 
+            `INSERT INTO sessions
             (token, userId) VALUES ($1, $2);`,
-            [token, checkUser.rows.id]);
+            [token, checkUser.rows[0].id]);
 
         
         
