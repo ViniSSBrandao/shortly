@@ -11,10 +11,12 @@ export default async function(req, res, next){
         WHERE token=$1
         `, [token])
 
-        console.log(token)
+        
         if(!entrieData.rowCount){
             return res.sendStatus(401);
         }
+        
+        res.locals.userId = entrieData.rows[0].userid;
         next()
     } catch (error) {
         return res.status(500).send(error.message)
