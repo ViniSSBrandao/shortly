@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import { db } from "../../../config/database/databaseConnection.js";
+import { db } from "../../config/database/databaseConnection.js";
 
 export default async function(req, res){
     try {
