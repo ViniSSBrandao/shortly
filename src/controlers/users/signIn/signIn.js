@@ -26,7 +26,7 @@ export default async function(req, res){
 
         
         
-        return res.send(token).status(200)
+        return res.send({token}).status(200)
     } catch (error) {
         return res.status(500).send(error.message)
     }
