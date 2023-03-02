@@ -6,11 +6,13 @@ export default async function(req, res){
         const {shortUrl} = req.params;
 
         const redirectTo = await db.query(`SELECT * FROM "shortenUrls" WHERE "shortenUrl" = $1`, [shortUrl])
-        await db.query('UPDATE "shortenUrls" SET "visits" = $1 WHERE "shortenUrl" = $2;', [redirectTo.rows[0].visits + 1, shortUrl])
-        
+
         if (!redirectTo.rowCount){
             return res.sendStatus(404)
         }
+
+        await db.query('UPDATE "shortenUrls" SET "visits" = $1 WHERE "shortenUrl" = $2;', [redirectTo.rows[0].visits + 1, shortUrl])
+        
 
         
         return res.redirect(302, redirectTo.rows[0].url)

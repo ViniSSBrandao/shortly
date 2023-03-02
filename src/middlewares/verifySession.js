@@ -17,6 +17,7 @@ export default async function(req, res, next){
         }
         
         res.locals.userId = entrieData.rows[0].userid;
+        res.locals.token = token;
         next()
     } catch (error) {
         return res.status(500).send(error.message)
