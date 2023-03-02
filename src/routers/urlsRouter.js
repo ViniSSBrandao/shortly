@@ -11,7 +11,6 @@ import verifySession from "../middlewares/verifySession.js";
 export const urlRouter = Router();
 
 urlRouter.post("/urls/shorten", verifySession, shortenUrlMiddleware, shortenController)
-urlRouter.post("/urls/:id", getUrlById)
+urlRouter.get("/urls/:id", getUrlById)
 urlRouter.get("/urls/open/:shortUrl", redirectUrl)
 urlRouter.delete("/urls/:id", verifySession, validateDeleteUrl, verifyUrlUser, deleteUrlController)
-urlRouter.get

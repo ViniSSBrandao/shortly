@@ -1,6 +1,6 @@
 import { v4 as uuidV4 } from "uuid";
 import bcrypt from 'bcrypt'
-import { db } from "../../config/database/databaseConnection.js";
+import { db } from "../../../config/database/databaseConnection.js";
 
 export default async function(req, res){
     

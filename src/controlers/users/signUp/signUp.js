@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt'
-import { db } from '../../config/database/databaseConnection.js';
+import { db } from '../../../config/database/databaseConnection.js';
 
 
 export default async function(req, res){
@@ -11,7 +11,7 @@ export default async function(req, res){
         return res.status(201).send("registered user");
     }
     catch(error){
-        return res.status(500).send(error.message)
+        return res.status(409).send(error.message)
     }
 
 }
