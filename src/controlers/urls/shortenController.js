@@ -8,8 +8,8 @@ export default async function(req, res){
         const shortenUrl = nanoid(8);
 
         
-        const saveUrl = await db.query(`INSERT INTO "shortenUrls" ("userId", url, "shortenUrl") VALUES ($1,$2,$3)`, [userId, url, shortenUrl])
-        const newUrl = await db.query(`SELECT * FROM "shortenUrls" where "shortenUrl" = $1`, [shortenUrl])
+        const saveUrl = await db.query(`INSERT INTO "shortenUrls" ("userId", url, "shortUrl") VALUES ($1,$2,$3)`, [userId, url, shortenUrl])
+        const newUrl = await db.query(`SELECT * FROM "shortenUrls" where "shortUrl" = $1`, [shortenUrl])
         
         console.log(newUrl.rows)
 

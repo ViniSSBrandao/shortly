@@ -12,5 +12,6 @@ export const urlRouter = Router();
 
 urlRouter.post("/urls/shorten", verifySession, shortenUrlMiddleware, shortenController)
 urlRouter.post("/urls/:id", getUrlById)
-urlRouter.post("/urls/open/:shortUrl", redirectUrl)
+urlRouter.get("/urls/open/:shortUrl", redirectUrl)
 urlRouter.delete("/urls/:id", verifySession, validateDeleteUrl, verifyUrlUser, deleteUrlController)
+urlRouter.get

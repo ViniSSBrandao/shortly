@@ -20,6 +20,6 @@ export default async function(req, res, next){
         res.locals.token = token;
         next()
     } catch (error) {
-        return res.status(500).send(error.message)
+        return res.status(401).send(error.message)
     }
 }

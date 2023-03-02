@@ -3,10 +3,11 @@ import bcrypt from 'bcrypt'
 import { db } from "../../config/database/databaseConnection.js";
 
 export default async function(req, res){
+    
     try {
         const {email, password} = req.body
         const checkUser = await db.query(
-            `SELECT * FROM customers
+            `SELECT * FROM users
             WHERE email=$1;`,
             [email]);
         if(!checkUser.rowCount){
@@ -27,6 +28,6 @@ export default async function(req, res){
         
         return res.send(token).status(200)
     } catch (error) {
-        return res.status(500).send(error.message)
+        return res.status(409).send(error.message)
     }
 }
