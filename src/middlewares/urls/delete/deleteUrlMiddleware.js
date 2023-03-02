@@ -8,7 +8,7 @@ export async function validateDeleteUrl(req, res, next){
         const {id} = req.params;
         const {error} = idSchema.validate({id})
         if(error){
-            return res.sendStatus(401)
+            return res.status(401).send("invalid id")
         }
         next()
     } catch (error) {
@@ -27,7 +27,7 @@ export async function verifyUrlUser(req, res, next){
         if(verifyId.rows[0].userId != verifyUser.rows[0].id){
             return res.status(401).send("this url belongs to another user")
         }
-        return res.send(token)
+
         next()
     } catch (error) {
          return res.status(500).send(error.message)
