@@ -11,7 +11,7 @@ export default async function(req, res){
             return res.sendStatus(404)
         }
 
-        await db.query('UPDATE "shortenUrls" SET "visits" = $1 WHERE "shortUrl" = $2;', [redirectTo.rows[0].visits + 1, shortUrl])
+        await db.query('UPDATE "shortenUrls" SET "visitCount" = $1 WHERE "shortUrl" = $2;', [redirectTo.rows[0].visitCount + 1, shortUrl])
         
 
         
