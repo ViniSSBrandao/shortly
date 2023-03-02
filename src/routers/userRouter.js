@@ -10,8 +10,8 @@ import verifySession from "../middlewares/verifySession.js";
 
 const userRouter = Router();
 
-userRouter.post('/sign-up', userSchemaValidate, signUp)
-userRouter.post('/sign-in', signInSchemaValidate, signIn)
+userRouter.post('/signup', userSchemaValidate, signUp)
+userRouter.post('/signin', signInSchemaValidate, signIn)
 userRouter.get('/users/me', verifySession, usersMe)
 userRouter.get("/ranking", ranking)
 
