@@ -4,7 +4,8 @@ import { db } from "../config/database/databaseConnection.js";
 export default async function(req, res, next){
     try {
         const { authorization } = req.headers;
-        const token = authorization;
+        const token = authorization?.replace("Bearer ", '')
+        
 
         const entrieData= await db.query(`
         SELECT * FROM sessions

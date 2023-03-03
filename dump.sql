@@ -140,39 +140,6 @@ ALTER TABLE ONLY public."shortenUrls" ALTER COLUMN id SET DEFAULT nextval('publi
 ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
 
 
---
--- Data for Name: sessions; Type: TABLE DATA; Schema: public; Owner: -
---
-
-INSERT INTO public.sessions VALUES (1, 1, '96d87b86-9980-4daa-944b-370bb0598c6f', '2023-03-02 11:20:11.928363');
-INSERT INTO public.sessions VALUES (2, 1, 'e1aea359-e0f4-452d-abb8-ba113a234f44', '2023-03-02 11:20:11.928363');
-INSERT INTO public.sessions VALUES (3, 1, 'e3549e34-495c-449d-832d-d61a07807b31', '2023-03-02 11:20:11.928363');
-INSERT INTO public.sessions VALUES (4, 1, '15fc9463-7122-4a7e-bb02-9889b8c0e4ce', '2023-03-02 11:20:11.928363');
-INSERT INTO public.sessions VALUES (5, 6, '7777dcd3-b5f1-490d-938b-f3fe9800ee2c', '2023-03-02 12:58:43.754174');
-INSERT INTO public.sessions VALUES (6, 1, '14665b26-a574-4a87-89fb-7e8df9327b4f', '2023-03-02 14:32:49.941876');
-INSERT INTO public.sessions VALUES (7, 1, '5f731f1d-d752-4083-bbfa-0e2b50d2e054', '2023-03-02 19:23:28.777178');
-
-
---
--- Data for Name: shortenUrls; Type: TABLE DATA; Schema: public; Owner: -
---
-
-INSERT INTO public."shortenUrls" VALUES (1, '2023-03-02 15:19:42.87038', 1, 'https://www.youtube.com/watch?v=oXsx4INEv8E', 3, 'Pbz0ZeST');
-INSERT INTO public."shortenUrls" VALUES (3, '2023-03-02 15:30:31.940725', 1, 'https://www.youtube.com/watch?v=oXsx4INEv8E', 11, '2miXJ3sc');
-INSERT INTO public."shortenUrls" VALUES (4, '2023-03-02 20:16:46.449722', 1, 'https://www.youtube.com/watch?v=oXsx4INEv8E', 0, 'IQ_VARD8');
-
-
---
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: -
---
-
-INSERT INTO public.users VALUES (1, '2023-03-02 14:32:48.009215', 'joao@drsw.com.br', '$2b$10$A/jXLLlWMMn1RYWWhlQDO.jWSGmVEXVO6mR7YfJMjA7nhVlyG9u0q', 'Joaw');
-INSERT INTO public.users VALUES (3, '2023-03-02 19:23:26.1384', 'joao@dw.com.br', '$2b$10$sMDE.28.thn627dzlgPvjeG3wn0S.VpvQI32BehrJYLRY.NEybQQG', 'Joaw');
-
-
---
--- Name: sessions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
 
 SELECT pg_catalog.setval('public.sessions_id_seq', 7, true);
 
