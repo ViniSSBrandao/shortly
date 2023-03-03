@@ -8,7 +8,7 @@ export default async function(req, res){
         }
         const urlId = findUrl.rows[0].id
         const { url, shortUrl} = findUrl.rows[0]
-        return res.status(200).send([{id: urlId, url, shortUrl}])
+        return res.status(200).send({id: urlId, url, shortUrl})
     } catch (error) {
         return res.status(500).send(error.message)
     }
