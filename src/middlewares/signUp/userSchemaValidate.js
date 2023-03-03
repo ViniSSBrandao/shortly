@@ -5,7 +5,7 @@ export default async function(req, res, next){
     try {
         const {error} = userSchema.validate({name, email, password, confirmPassword}, {abortEarly: false});
         if(password != confirmPassword){
-            return res.sendStatus(400);
+            return res.sendStatus(422);
         }
        if(error){
             return res.status(422).send(error.message);
